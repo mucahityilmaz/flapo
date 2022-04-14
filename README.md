@@ -14,6 +14,8 @@ Clone or unzip this repo. Then run:
         -w /var/www/html \
         laravelsail/php81-composer:latest \
         composer install --ignore-platform-reqs
+    
+    ./vendor/bin/sail up
 
 ## Routes
 
