@@ -6,8 +6,7 @@ Clone or unzip this repo. Then run:
 
     sail up
 
-Note: If you don't have Laravel's `sail` (https://laravel.com/docs/9.x/sail) on your local, you need to run 
-`compsoer install` manually. Or, you can run the next command to execute `composer install` on a docker container. This is needed only once to generate vendor folder, in case of your local PHP version is older den 8.1.
+*Important note*: If you don't have Laravel's `sail` (https://laravel.com/docs/9.x/sail) on your local, you need to run  `composer install` manually. Or, you can run the next command to execute `composer install` on a docker container. This is needed only once to generate vendor folder, in case of your local PHP version is older den 8.1.
 
     docker run --rm \
         -u "$(id -u):$(id -g)" \
