@@ -4,7 +4,16 @@ This is a basic API built with [Laravel](https://laravel.com) and runs on [Docke
 
 Clone or unzip this repo. Then run:
 
-    ./vendor/bin/sail up
+    sail up
+
+Note: If you don't have `sail` on your local, you might use it from another local Laravel repo or you can run this command to execute `composer install` on a docker container. This is needed only once to generate vendor folder. 
+
+    docker run --rm \
+        -u "$(id -u):$(id -g)" \
+        -v $(pwd):/var/www/html \
+        -w /var/www/html \
+        laravelsail/php81-composer:latest \
+        composer install --ignore-platform-reqs
 
 ## Routes
 
