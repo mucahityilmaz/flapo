@@ -6,7 +6,7 @@ Clone or unzip this repo. Then run:
 
     sail up
 
-Note: If you don't have `sail` on your local, you may run `compsoer install` manually. Or, you can run the next command to execute `composer install` on a docker container. This is needed only once to generate vendor folder, in case of your local PHP version is older den 8.1.
+Note: If you don't have Laravel's `sail` (https://laravel.com/docs/9.x/sail) on your local, you may run `compsoer install` manually. Or, you can run the next command to execute `composer install` on a docker container. This is needed only once to generate vendor folder, in case of your local PHP version is older den 8.1.
 
     docker run --rm \
         -u "$(id -u):$(id -g)" \
@@ -17,18 +17,22 @@ Note: If you don't have `sail` on your local, you may run `compsoer install` man
 
 ## Routes
 
-`GET http://localhost/cheapAndExpensive?url=EXTERNAL_JSON_URL`
-
+### GET `/api/cheapAndExpensive`
 Most expensive and cheapest beer per litre.
 
-`GET http://localhost/byPrice?price=17.99&url=EXTERNAL_JSON_URL`
+    curl http://localhost/api/cheapAndExpensive?url=EXTERNAL_JSON_URL
 
+### GET `/api/byPrice`
 Which beers cost exactly €17.99?
 
-`GET http://localhost/mostBottles?url=EXTERNAL_JSON_URL`
+    curl http://localhost/api/byPrice?price=17.99&url=EXTERNAL_JSON_URL
 
+### GET `/api/mostBottles`
 Which one product comes in the most bottles?
 
-`GET http://localhost/all?url=EXTERNAL_JSON_URL`
+    curl http://localhost/api/mostBottles?url=EXTERNAL_JSON_URL
 
+### GET `/api/all`
 Combined results of other routes
+
+    curl http://localhost/api/all?url=EXTERNAL_JSON_URL
